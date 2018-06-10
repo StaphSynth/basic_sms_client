@@ -6,8 +6,6 @@ class Contact < ApplicationRecord
   has_many :messages
   has_many :replies, class_name: 'Reply'
 
-  validates :name, presence: true,
-                   length: { maximum: 50 }
   validates :phone_number, presence: true,
                            length: { maximum: DIGITS_IN_PHONE_NUMBER },
                            format: { with: AU_MOB_REGEX }
